@@ -1,21 +1,16 @@
 <template>
-  <ul>
-    <learning-resource
-      v-for="res in storedRecouces"
-      :key="res.id"
-      :title="res.title"
-      :description="res.description"
-      :link="res.link"
-    ></learning-resource>
-  </ul>
+  <the-header title="RememberMe"></the-header>
+  <stored-resources :resources="storedRecouces"></stored-resources>
 </template>
 
 <script>
-import LearningResource from './component/leaning-resource/LearningResource.vue';
+import StoredResources from './component/leaning-resource/StoredReasources.vue';
+import TheHeader from './component/layouts/TheHeader.vue';
 
 export default {
   components: {
-    LearningResource,
+    StoredResources,
+    TheHeader,
   },
   data() {
     return {
@@ -37,3 +32,19 @@ export default {
   },
 };
 </script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+</style>
